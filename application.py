@@ -23,14 +23,26 @@ APPLICATION_NAME = "Catalog Application"
 # DBSession = sessionmaker(bind=engine)
 # session = DBSession()
 
+
 @app.route('/')
 def show_index():
     return "Hello World! This is Flask."
 
 
+@app.route('/resume')
+def parse_resume():
+    resstr = ""
+    if request.form['file']:
+        resstr += "uploaded file"
+    else:
+        resstr += "no file"
+    resstr += ("  " + str(request.form['optradio']))
+    return resstr
+
+
 app.secret_key = '89324heosrhg8943fji023u4r'
 
 if __name__ == '__main__':
-    
+
     app.debug = True
     app.run()
