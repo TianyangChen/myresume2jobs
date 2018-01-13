@@ -26,7 +26,7 @@ APPLICATION_NAME = "Catalog Application"
 
 @app.route('/')
 def show_index():
-    return "Hello World! This is Flask."
+    return render_template('index.html')
 
 
 @app.route('/resume')
