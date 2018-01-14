@@ -25,7 +25,7 @@ app = Flask(__name__)
 
 APPLICATION_NAME = "Catalog Application"
 
-app.config['UPLOAD_FOLDER'] = os.getcwd()
+app.config['UPLOAD_FOLDER'] = "/var/www/pdfs/"
 app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024
 
 model = gensim.models.Word2Vec.load('/var/www/myresume2jobs/w2v.model')
@@ -44,7 +44,7 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-app.config['UPLOADED_PATH'] = os.getcwd() + '/upload'
+# app.config['UPLOADED_PATH'] = os.getcwd() + '/upload'
 
 
 @app.route('/')
