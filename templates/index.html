@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portfolio</title>
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/css/dropzone.css" rel="stylesheet">
-    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='dropzone.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -19,24 +19,22 @@
                 <h2>Just upload your resume</h2>
             </div>
         </section>
+  
         <section class="row">
             <div class="col-sm-12">
-                <form action="/resume" class="dropzone" method="POST">
+                <form action="{{ url_for('parse_resume') }}" class="dropzone" method="POST" enctype="multipart/form-data" id="dz">
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" value="jobs" checked="true">Jobs</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" value="internship">Internship</label>
+                </form>
             </div>
-        </section>
-        <section class="row">
-            <div class="col-sm-12">
-                <label class="radio-inline">
-                    <input type="radio" name="optradio" checked="true">Jobs</label>
-                <label class="radio-inline">
-                    <input type="radio" name="optradio">Internship</label>
-            </div>
-            </form>
         </section>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
-    <script src="/static/js/dropzone.js"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='dropzone.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>

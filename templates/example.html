@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://www.dropzonejs.com/examples/simple.html -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Dropzone simple example</title>
+    <!--
+  DO NOT SIMPLY COPY THOSE LINES. Download the JS and CSS files from the
+  latest release (https://github.com/enyo/dropzone/releases/latest), and
+  host them yourself!
+-->
+    <script src="/static/js/dropzone.js"></script>
+    <link rel="stylesheet" href="/static/css/dropzone.css">
+</head>
+
+<body>
+    <p>
+        This is the most minimal example of Dropzone. The upload in this example doesn't work, because there is no actual server to handle the file upload.
+    </p>
+    <!-- Change /upload-target to your upload address -->
+    <form action="http://localhost:8000/resume" class="dropzone dz-clickable">
+        <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+    </form>
+    <input type="file" multiple="multiple" class="dz-hidden-input" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;">
+</body>
+
+</html>

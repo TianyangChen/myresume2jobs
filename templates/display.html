@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <table style="width:100%">
+        <tr>
+            <th>Job Title</th>
+            <th>Company</th>
+            <th>Job Link</th>
+        </tr>
+        {% for job in jobs %}
+        <tr>
+            <td>{{job.JobTile}}</td>
+            <td>{{job.CompanyName}}</td>
+            <td><a href="{{job.CompanyName}}" target="_blank">Apply now</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
