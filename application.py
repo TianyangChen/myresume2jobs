@@ -28,7 +28,7 @@ APPLICATION_NAME = "Catalog Application"
 app.config['UPLOAD_FOLDER'] = os.getcwd()
 app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024
 
-model = gensim.models.Word2Vec.load('w2v.model')
+model = gensim.models.Word2Vec.load('/var/www/myresume2jobs/w2v.model')
 
 
 def allowed_file(filename):
